@@ -5,8 +5,8 @@
 @layer base {
   :root {
     --border-radius: 12px;
-    --backgroundRGB: 255, 246, 246;
-    --primaryColor: 12, 11, 10;
+    --backgroundRGB: #fff;
+    --primaryColor: #00104B;
     --accentColor: 228, 210, 210;
   }
 
