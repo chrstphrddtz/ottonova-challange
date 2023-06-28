@@ -21,9 +21,14 @@ export default function Form() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    console.log(event.target);
-
-    console.log("Form Information: ", firstName, lastName, email, phoneNumber);
+    console.log(
+      "Form Information: ",
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      gender
+    );
 
     event.target.reset();
   }
@@ -89,8 +94,15 @@ export default function Form() {
         value={gender}
         onChange={handleChange}
       >
-        <ToggleButton value="male">Male</ToggleButton>
-        <ToggleButton value="female">Female</ToggleButton>
+        <ToggleButton value="male" onChange={(e) => setGender(e.target.value)}>
+          Male
+        </ToggleButton>
+        <ToggleButton
+          value="female"
+          onChange={(e) => setGender(e.target.value)}
+        >
+          Female
+        </ToggleButton>
       </ToggleButtonGroup>
 
       <Button
