@@ -1,9 +1,15 @@
 "use client";
-import { use, useState } from "react";
+import { useState } from "react";
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { FormControl, Stack } from "@mui/material";
+import {
+  FormControl,
+  Stack,
+  Switch,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "@mui/material";
 
 export default function Form() {
   const [firstName, setFirstName] = useState("");
@@ -14,11 +20,16 @@ export default function Form() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    alert("Daten erfolgreich übermittelt");
 
-    console.log(firstName, lastName, email, phoneNumber);
+    console.log(event.target);
+
+    console.log("Form Information: ", firstName, lastName, email, phoneNumber);
 
     event.target.reset();
+  }
+
+  function handleChange(event, newGender) {
+    setGender(newGender);
   }
 
   return (
@@ -69,6 +80,18 @@ export default function Form() {
         size="small"
         required
       />
+
+      {/* <Switch id="gender" name="gender" label="Geschlecht" required /> */}
+
+      <ToggleButtonGroup
+        exclusive
+        color="primary"
+        value={gender}
+        onChange={handleChange}
+      >
+        <ToggleButton value="male">Male</ToggleButton>
+        <ToggleButton value="female">Female</ToggleButton>
+      </ToggleButtonGroup>
 
       <Button
         type="submit"
