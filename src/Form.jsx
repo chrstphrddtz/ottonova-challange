@@ -2,15 +2,16 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { FormControl, Stack, FormLabel, FormHelperText } from "@mui/material";
+import MuiPhoneNumber from "mui-phone-number";
 
 export default function Form() {
   function handleSubmit(event) {
     event.preventDefault();
   }
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-      <h2>Kontaktformular</h2>
-      <Stack className="flex flex-row gap-2">
+    <form onSubmit={handleSubmit} className="flex flex-row gap-2">
+      <h2 className="font-2xl">Kontaktformular</h2>
+      <Stack className="flex flex-col gap-2">
         <TextField
           label="Vorname"
           id="firstName"
@@ -42,11 +43,11 @@ export default function Form() {
         required
       />
 
-      <TextField
+      <MuiPhoneNumber
+        defaultCountry={"de"}
         label="Telefon"
         id="phoneNumber"
         name="phoneNumber"
-        type="number"
         variant="outlined"
         size="small"
         required
