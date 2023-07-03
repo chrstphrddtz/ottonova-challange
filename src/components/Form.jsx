@@ -23,17 +23,13 @@ export default function Form() {
     event.target.reset();
   }
 
-  function handleChange(event, newGender) {
-    setGender(newGender);
-  }
-
   return (
     <div className="w-3/4">
       <h2 className="font-4xl font-semibold mb-12">Kontaktformular</h2>
+
       <form onSubmit={handleSubmit} className="grid gap-6 grid-cols-2">
-        {/* <div className="flex flex-row justify-between"> */}
         <div className="flex flex-col">
-          <label className="text-sm" htmlFor="firstName">
+          <label className="text-sm" htmlFor="firstName" aria-label="Vorname">
             Vorname*
           </label>
           <input
@@ -48,7 +44,7 @@ export default function Form() {
         </div>
 
         <div className="flex flex-col">
-          <label className="text-sm" htmlFor="lastName">
+          <label className="text-sm" htmlFor="lastName" aria-label="Nachname">
             Nachname*
           </label>
           <input
@@ -63,7 +59,7 @@ export default function Form() {
         </div>
 
         <div className="flex flex-col">
-          <label className="text-sm" htmlFor="email">
+          <label className="text-sm" htmlFor="email" aria-label="Email Adresse">
             E-Mail Adresse*
           </label>
           <input
@@ -78,7 +74,11 @@ export default function Form() {
         </div>
 
         <div className="flex flex-col">
-          <label className="text-sm" htmlFor="phoneNumber">
+          <label
+            className="text-sm"
+            htmlFor="phoneNumber"
+            aria-label="Telefonnummer"
+          >
             Telefonnummer*
           </label>
           <input
@@ -93,45 +93,44 @@ export default function Form() {
         </div>
 
         <div
-          className="flex flex-row justify-between col-span-2"
           onChange={(e) => setGender(e.target.value)}
+          className="flex flex-col gap-3 justify-between"
         >
-          <div className="flex flex-col gap-3 justify-between">
-            <h3 className="text-sm">Geschlecht*</h3>
-            <div>
-              <div className="flex">
-                <div>
-                  <input
-                    className="hidden peer"
-                    type="radio"
-                    id="male"
-                    value="male"
-                    name="gender"
-                  />
-                  <label
-                    htmlFor="male"
-                    className="p-3 my-3 border rounded-l-lg text-accent-color bg-background-color cursor-pointer hover:drop-shadow-lg hover:bg-accent-color hover:text-background-color peer-checked:bg-accent-color peer-checked:text-background-color"
-                  >
-                    männlich
-                  </label>
-                </div>
+          <h3 className="text-sm">Geschlecht*</h3>
+          <div>
+            <div className="flex">
+              <div>
+                <input
+                  className="hidden peer"
+                  type="radio"
+                  id="male"
+                  value="male"
+                  name="gender"
+                />
+                <label
+                  htmlFor="male"
+                  aria-label="Geschlecht männlich"
+                  className="p-3 my-3 border rounded-l-lg text-accent-color bg-background-color cursor-pointer hover:drop-shadow-lg hover:bg-accent-color hover:text-background-color peer-checked:bg-accent-color peer-checked:text-background-color"
+                >
+                  männlich
+                </label>
+              </div>
 
-                <div>
-                  <input
-                    className="hidden peer"
-                    type="radio"
-                    id="female"
-                    value="female"
-                    name="gender"
-                  />
-                  <label
-                    htmlFor="female"
-                    className="p-3 my-3 border-t border-r border-b rounded-r-lg text-accent-color bg-background-color cursor-pointer hover:drop-shadow-lg hover:bg-accent-color hover:text-background-color peer-checked:bg-accent-color peer-checked:text-background-color"
-                  >
-                    weiblich
-                  </label>
-                </div>
-
+              <div>
+                <input
+                  className="hidden peer"
+                  type="radio"
+                  id="female"
+                  value="female"
+                  name="gender"
+                />
+                <label
+                  htmlFor="female"
+                  aria-label="Geschlecht weiblich"
+                  className="p-3 my-3 border-t border-r border-b rounded-r-lg text-accent-color bg-background-color cursor-pointer hover:drop-shadow-lg hover:bg-accent-color hover:text-background-color peer-checked:bg-accent-color peer-checked:text-background-color"
+                >
+                  weiblich
+                </label>
               </div>
             </div>
           </div>
