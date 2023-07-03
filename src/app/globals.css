@@ -5,13 +5,13 @@
 @layer base {
   :root {
     --border-radius: 12px;
-    --backgroundRGB: #fff;
-    --primaryColor: #00104B;
-    --accentColor: 228, 210, 210;
+    --backgroundRGB: rgb(255, 255, 255);
+    --primaryColor: rgb(0, 16, 75);
+    --accentColor: rgb(0, 119, 255);
   }
 
   body {
-    color: rgb(var(--foreground-rgb));
+    color: rgb(var(--primaryColor));
     background: rgb(var(--background-rgb));
   }
 
@@ -54,5 +54,14 @@
     margin-top: 5rem;
     padding: 2rem;
     /* min-height: 100vh; */
+  }
+}
+
+@layer components {
+  :root {
+    --border-radius: 12px;
+    --backgroundRGB: rgb(255, 255, 255);
+    --primaryColor: rgb(0, 16, 74);
+    --accentColor: rgb(0, 119, 255);
   }
 }
