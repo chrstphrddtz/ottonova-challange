@@ -42,26 +42,12 @@
     text-decoration: none;
   }
 
-  /* a:hover {
-    text-decoration: underline;
-  } */
 
   main {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     align-items: center;
     margin-top: 5rem;
     padding: 2rem;
-    /* min-height: 100vh; */
-  }
-}
-
-@layer components {
-  :root {
-    --border-radius: 12px;
-    --backgroundRGB: rgb(255, 255, 255);
-    --primaryColor: rgb(0, 16, 74);
-    --accentColor: rgb(0, 119, 255);
   }
 }
