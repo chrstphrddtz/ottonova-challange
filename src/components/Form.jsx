@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 
+import MaleIcon from "./icons/Maleicon";
+import FemaleIcon from "./icons/Femaleicon";
+
 export default function Form() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -23,6 +26,22 @@ export default function Form() {
     event.target.reset();
   }
 
+  function handleMaleClick() {
+    const maleRightArm = document.getElementById("maleRightArm");
+    maleRightArm.classList.add("animate-maleRightArm");
+
+    const femaleRightArm = document.getElementById("femaleRightArm");
+    femaleRightArm.classList.remove("animate-femaleRightArm");
+  }
+
+  function handleFemaleClick() {
+    const femaleRightArm = document.getElementById("femaleRightArm");
+    femaleRightArm.classList.add("animate-femaleRightArm");
+
+    const maleRightArm = document.getElementById("maleRightArm");
+    maleRightArm.classList.remove("animate-maleRightArm");
+  }
+
   return (
     <div className="w-3/4">
       <h2 className="font-4xl font-semibold mb-12">Kontaktformular</h2>
@@ -33,7 +52,7 @@ export default function Form() {
             Vorname*
           </label>
           <input
-            className="p-2 text-base border border-solid border-black rounded focus: decoration-solid decoration-2"
+            className="p-2 text-base border border-solid border-[gray] rounded"
             onChange={(e) => setFirstName(e.target.value)}
             id="firstName"
             name="firstName"
@@ -48,7 +67,7 @@ export default function Form() {
             Nachname*
           </label>
           <input
-            className="p-2 text-base border border-solid border-black rounded focus: decoration-solid decoration-2"
+            className="p-2 text-base border border-solid border-[gray] rounded"
             onChange={(e) => setLastName(e.target.value)}
             id="lastName"
             name="lastName"
@@ -63,12 +82,12 @@ export default function Form() {
             E-Mail Adresse*
           </label>
           <input
-            className="p-2 text-base border border-solid border-black rounded focus: decoration-solid decoration-2"
+            className="p-2 text-base border border-solid border-[gray] rounded"
             onChange={(e) => setEmail(e.target.value)}
             id="email"
             name="email"
             type="email"
-            placeholder="hello@chrstphrddtz.com"
+            placeholder="otto@nova.com"
             required
           />
         </div>
@@ -82,7 +101,7 @@ export default function Form() {
             Telefonnummer*
           </label>
           <input
-            className="p-2 text-base border border-solid border-black rounded focus: decoration-solid decoration-2"
+            className="p-2 text-base border border-solid border-[gray] rounded"
             onChange={(e) => setPhoneNumber(e.target.value)}
             id="phoneNumber"
             name="phoneNumber"
@@ -110,9 +129,10 @@ export default function Form() {
                 <label
                   htmlFor="male"
                   aria-label="Geschlecht männlich"
-                  className="p-3 my-3 border rounded-l-lg text-accent-color bg-background-color cursor-pointer hover:drop-shadow-lg hover:bg-accent-color hover:text-background-color peer-checked:bg-accent-color peer-checked:text-background-color"
+                  onClick={handleMaleClick}
+                  className="w-[60px] h-14 flex content-around justify-center p-3 border border-solid border-[gray] rounded-l-lg text-accent-color bg-background-color cursor-pointer hover:drop-shadow-lg hover:bg-accent-color hover:text-background-color peer-checked:bg-accent-color peer-checked:text-background-color"
                 >
-                  männlich
+                  <MaleIcon />
                 </label>
               </div>
 
@@ -127,9 +147,10 @@ export default function Form() {
                 <label
                   htmlFor="female"
                   aria-label="Geschlecht weiblich"
-                  className="p-3 my-3 border-t border-r border-b rounded-r-lg text-accent-color bg-background-color cursor-pointer hover:drop-shadow-lg hover:bg-accent-color hover:text-background-color peer-checked:bg-accent-color peer-checked:text-background-color"
+                  onClick={handleFemaleClick}
+                  className="w-[60px] h-14 flex content-around justify-center p-3 border-t border-r border-b border-[gray] rounded-r-lg text-accent-color bg-background-color cursor-pointer hover:drop-shadow-lg hover:bg-accent-color hover:text-background-color peer-checked:bg-accent-color peer-checked:text-background-color"
                 >
-                  weiblich
+                  <FemaleIcon />
                 </label>
               </div>
             </div>
