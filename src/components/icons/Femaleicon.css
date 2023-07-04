@@ -9,12 +9,12 @@
 
 .femaleDownerBody {
   background-color: gray;
-  clip-path: polygon(22% 50%, 78% 50%, 100% 100%, 0% 100%);
+  clip-path: polygon(21% 50%, 79% 50%, 100% 100%, 0% 100%);
   position: relative;
   height: 22px;
-  width: 18px;
+  width: 16px;
   bottom: 15px;
-  right: 9px;
+  right: 8px;
 }
 
 .femaleHead {
